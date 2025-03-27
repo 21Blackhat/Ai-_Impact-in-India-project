@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Future Trends of AI in India</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #ff5722;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 0 0 15px 15px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .trend-box {
+            background: white;
+            margin: 40px auto;
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 700px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            font-size: 18px;
+            line-height: 1.6;
+            transition: transform 0.3s ease;
+        }
+
+        .trend-box:hover {
+            transform: scale(1.02);
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 20px;
+            background: #2196f3;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #1976d2;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🔮 Future Trends of AI in India</h1>
+    </header>
+
+    <div class="trend-box" id="trendBox">
+        <p>Click the button below to discover key AI future trends shaping India's development.</p>
+    </div>
+
+    <button onclick="showNextTrend()">Show Next AI Trend</button>
+
+    <footer>
+        &copy; 2025 AI in India Project. All rights reserved.
+    </footer>
+
+    <script>
+        const trends = [
+            "📊 <b>AI in Governance:</b> Real-time decision making for public services using analytics & predictive modeling.",
+            "🏥 <b>AI in Healthcare:</b> AI-powered diagnostics, remote health monitoring & robotic surgery systems.",
+            "🌾 <b>AI in Agriculture:</b> Smart irrigation, pest prediction, and drone-based crop surveillance.",
+            "🏙️ <b>Smart Cities:</b> AI managing traffic, pollution, and infrastructure in real time.",
+            "🤖 <b>Robotics & Automation:</b> Used in manufacturing, retail, and domestic assistants.",
+            "💼 <b>AI in Education:</b> Adaptive learning platforms and automated grading systems.",
+            "💡 <b>AI Startups:</b> India becoming a global hub for AI-driven entrepreneurship and innovation."
+        ];
+
+        let index = 0;
+
+        function showNextTrend() {
+            const box = document.getElementById("trendBox");
+            box.innerHTML = `<p>${trends[index]}</p>`;
+            index = (index + 1) % trends.length;
+        }
+    </script>
+    <a href="index.html">← Back to Home</a>
+
+</body>
+</html>

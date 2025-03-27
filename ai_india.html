@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI in India</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f2f2f2;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            background: #006699;
+            color: white;
+            padding: 15px;
+        }
+        .content {
+            max-width: 900px;
+            margin: auto;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .quiz-container {
+            margin-top: 40px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .quiz-container h2 {
+            margin-bottom: 20px;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .answers label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        #submit {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #submit:hover {
+            background: #218838;
+        }
+        #results {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🤖 Artificial Intelligence in India 🇮🇳</h1>
+    </header>
+
+    <div class="content">
+        <p>India is rapidly embracing AI across different sectors:</p>
+        <ul>
+            <li><span class="highlight">Agriculture:</span> AI is used in crop monitoring, predictive analytics, and smart irrigation systems 🌾</li>
+            <li><span class="highlight">Healthcare:</span> AI helps diagnose diseases early, especially in remote areas 🏥</li>
+            <li><span class="highlight">Education:</span> AI tutors and content recommendation systems improve personalized learning 📚</li>
+            <li><span class="highlight">Smart Cities:</span> AI aids in traffic control, waste management, and public safety 🚦🏙️</li>
+            <li><span class="highlight">Startups:</span> India has a growing ecosystem of AI-based startups 🚀</li>
+        </ul>
+
+        <p>The Indian government has launched initiatives like <span class="highlight">AI for All</span> to promote awareness and training in artificial intelligence across the country.</p>
+
+        <div class="quiz-container">
+            <h2>Test Your Knowledge on AI in India</h2>
+            <div id="quiz"></div>
+            <button id="submit">Submit Answers</button>
+            <div id="results"></div>
+        </div>
+    </div>
+
+    <footer style="text-align:center; margin-top:40px;">
+        <p>&copy; 2025 India AI Awareness Project</p>
+    </footer>
+
+    <script>
+        (function() {
+            const myQuestions = [
+                {
+                    question: "In which sector is AI used for predictive analytics in India?",
+                    answers: {
+                        a: "Agriculture",
+                        b: "Education",
+                        c: "Tourism"
+                    },
+                    correctAnswer: "a"
+                },
+                {
+                    question: "How does AI assist in India's healthcare sector?",
+                    answers: {
+                        a: "By automating surgeries",
+                        b: "By diagnosing diseases early",
+                        c: "By replacing doctors"
+                    },
+                    correctAnswer: "b"
+                },
+                {
+                    question: "What initiative has the Indian government launched to promote AI awareness?",
+                    answers: {
+                        a: "Digital India",
+                        b: "AI for All",
+                        c: "Make in India"
+                    },
+                    correctAnswer: "b"
+                }
+            ];
+
+            function buildQuiz() {
+                const output = [];
+                myQuestions.forEach((currentQuestion, questionNumber) => {
+                    const answers = [];
+                    for (letter in currentQuestion.answers) {
+                        answers.push(
+                            `<label>
+                                <input type="radio" name="question${questionNumber}" value="${letter}">
+                                ${letter} :
+                                ${currentQuestion.answers[letter]}
+                            </label>`
+                        );
+                    }
+                    output.push(
+                        `<div class="question"> ${currentQuestion.question} </div>
+                        <div class="answers"> ${answers.join('')} </div>`
+                    );
+                });
+                quizContainer.innerHTML = output.join('');
+            }
+
+            function showResults() {
+                const answerContainers = quizContainer.querySelectorAll('.answers');
+                let numCorrect = 0;
+                myQuestions.forEach((currentQuestion, questionNumber) => {
+                    const answerContainer = answerContainers[questionNumber];
+                    const selector = `input[name=question${questionNumber}]:checked`;
+                    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+                    if (userAnswer === currentQuestion.correctAnswer) {
+                        numCorrect++;
+                        answerContainers[questionNumber].style.color = 'green';
+                    } else {
+                        answerContainers[questionNumber].style.color = 'red';
+                    }
+                });
+                resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length} correct`;
+            }
+
+            const quizContainer = document.getElementById('quiz');
+            const resultsContainer = document.getElementById('results');
+            const submitButton = document.getElementById('submit');
+
+            buildQuiz();
+
+            submitButton.addEventListener('click', showResults);
+        })();
+    </script>
+    <a href="index.html">← Back to Home</a>
+</body>
+</html>

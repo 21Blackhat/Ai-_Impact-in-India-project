@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Industry Case Studies - India</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f9ff;
+            color: #333;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #003366;
+        }
+        .case {
+            background: #fff;
+            border-left: 5px solid #007bff;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        .case:hover {
+            background: #eaf4ff;
+        }
+        .quiz {
+            background: #fef9e7;
+            border: 1px solid #ffd700;
+            padding: 15px;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+        .quiz h3 {
+            margin-top: 0;
+        }
+        .quiz button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .quiz button:hover {
+            background: #0056b3;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 10px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📊 AI Case Studies in Indian Industries</h1>
+
+    <div class="case">
+        <h3>1. Healthcare 🏥</h3>
+        <p>AI-powered diagnostic tools are helping Indian doctors detect diseases like cancer and diabetic retinopathy earlier and more accurately.</p>
+    </div>
+
+    <div class="case">
+        <h3>2. Agriculture 🌾</h3>
+        <p>Startups are using AI for precision farming, weather prediction, and yield forecasting to support Indian farmers.</p>
+    </div>
+
+    <div class="case">
+        <h3>3. Finance 💳</h3>
+        <p>Banks like HDFC and SBI use AI-driven chatbots to improve customer service and detect fraudulent activities.</p>
+    </div>
+
+    <div class="case">
+        <h3>4. Education 🎓</h3>
+        <p>AI is being used to personalize learning experiences and support students through virtual tutors in EdTech platforms.</p>
+    </div>
+
+    <div class="quiz">
+        <h3>🎯 Quick Quiz: Which industry has AI transformed the most in India?</h3>
+        <button onclick="checkAnswer('health')">Healthcare</button>
+        <button onclick="checkAnswer('agriculture')">Agriculture</button>
+        <button onclick="checkAnswer('finance')">Finance</button>
+        <button onclick="checkAnswer('education')">Education</button>
+        <div id="quizResult" class="result"></div>
+    </div>
+
+    <script>
+        function checkAnswer(answer) {
+            const correct = 'agriculture';
+            const result = document.getElementById('quizResult');
+            if (answer === correct) {
+                result.textContent = "✅ Correct! AI in agriculture is revolutionizing farming.";
+                result.style.color = "green";
+            } else {
+                result.textContent = "❌ Try again. Hint: Think about farmers and crops.";
+                result.style.color = "red";
+            }
+        }
+    </script>
+    <a href="index.html">← Back to Home</a>
+</body>
+</html>
